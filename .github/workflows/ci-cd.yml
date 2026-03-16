@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: pip install flake8 pytest pytest-cov pandas pyarrow pyyaml
+        run: pip install flake8 pytest pytest-cov pandas pyarrow pyyaml boto3 requests sqlalchemy
       - name: Lint
         run: flake8 src/ dags/ --max-line-length=120 --ignore=E501,W503,E402,F401,F541,F811,F841
       - name: Run tests
@@ -56,3 +56,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Production deploy triggered"
+```
+
+The only change from before is this line:
+```
+pip install flake8 pytest pytest-cov pandas pyarrow pyyaml boto3 requests sqlalchemy
