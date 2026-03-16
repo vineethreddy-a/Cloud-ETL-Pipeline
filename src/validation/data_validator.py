@@ -252,7 +252,7 @@ def main():
     parser.add_argument("--path", required=True, help="Path to parquet file")
     args = parser.parse_args()
 
-#    config = load_config(args.env)
+#    _ = load_config(args.env)  # noqa: F841
     df = pd.read_parquet(args.path)
 
     # Example rules — customize per dataset
