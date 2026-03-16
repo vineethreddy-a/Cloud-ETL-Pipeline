@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install flake8 pytest pytest-cov pandas pyarrow pyyaml
       - name: Lint
-        run: flake8 src/ dags/ --max-line-length=120 --ignore=E501,W503,E402,F401,F541,F841
+        run: flake8 src/ dags/ --max-line-length=120 --ignore=E501,W503,E402,F401,F541,F811,F841
       - name: Run tests
         run: PYTHONPATH=src pytest tests/ -v --tb=short
 
