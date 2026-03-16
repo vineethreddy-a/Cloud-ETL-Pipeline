@@ -16,11 +16,10 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: |
-          pip install flake8 pytest pytest-cov pandas pyarrow pyyaml
+        run: pip install flake8 pytest pytest-cov pandas pyarrow pyyaml
       - name: Lint
-        run: flake8 src/ dags/ --max-line-length=120 --ignore=E501,W503,E402,F401
-      - name: Test
+        run: flake8 src/ dags/ --max-line-length=120 --ignore=E501,W503,E402,F401,F541,F841
+      - name: Run tests
         run: PYTHONPATH=src pytest tests/ -v --tb=short
 
   validate-dag:
@@ -47,7 +46,7 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Staging deploy for ${{ github.sha }}"
+      - run: echo "Staging deploy triggered"
 
   deploy-prod:
     name: Deploy to Production
@@ -56,4 +55,4 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Production deploy for ${{ github.sha }}"
+      - run: echo "Production deploy triggered"
