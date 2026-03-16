@@ -1,0 +1,17 @@
+# Base configuration shared across all environments
+
+aws:
+  region: us-east-1
+
+s3:
+  landing_prefix: landing
+  curated_prefix: curated
+
+spark_shuffle_partitions: 200
+
+snowflake:
+  url: ""
+  database: ANALYTICS
+  schema: PUBLIC
+  warehouse: COMPUTE_WH
+  role: SYSADMIN

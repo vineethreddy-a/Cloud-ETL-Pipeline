@@ -1,0 +1,10 @@
+# Development environment overrides
+
+s3:
+  bucket: my-etl-dev-bucket
+
+spark_shuffle_partitions: 50
+
+snowflake:
+  url: myaccount.snowflakecomputing.com
+  database: DEV_ANALYTICS

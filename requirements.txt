@@ -1,0 +1,42 @@
+# Core
+pandas==2.2.0
+numpy==1.26.4
+pyarrow==15.0.0
+
+# AWS
+boto3==1.34.0
+botocore==1.34.0
+
+# Spark (provided by EMR in production; local dev)
+pyspark==3.5.1
+
+# Database connectors
+snowflake-connector-python==3.7.0
+snowflake-sqlalchemy==1.5.1
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.27
+PyMySQL==1.1.0
+
+# Airflow (core only — use official Docker image in production)
+apache-airflow==2.8.1
+
+# Config
+PyYAML==6.0.1
+python-dotenv==1.0.1
+
+# Requests
+requests==2.31.0
+urllib3==2.2.0
+
+# Testing
+pytest==8.0.0
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+
+# Linting
+flake8==7.0.0
+black==24.2.0
+
+# Utilities
+tqdm==4.66.2
+tabulate==0.9.0
